@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/image")
-@CrossOrigin(origins = "http://ok-archive.com")
+@CrossOrigin(origins = "http://ok-archive.com:3000")
 @RequiredArgsConstructor
 public class ImageController {
     private final ImageDao imageDao;
@@ -29,7 +29,9 @@ public class ImageController {
     public List<String> upload(@RequestParam("file") List<MultipartFile> files, HttpServletRequest request) throws IOException {
         List<String> uploadedFilesUrls = new ArrayList<>();
         System.out.println("files : "+files);
-        File path = new File(request.getServletContext().getRealPath("/") + "/static/");
+//        File path = new File(request.getServletContext().getRealPath("/") + "/static/");
+        File path = new File("http://ok-archive.com:8080/" + "/static/");
+
 
         for (MultipartFile file : files) {
             FileOutputStream fileOutputStream = new FileOutputStream(path + file.getOriginalFilename());

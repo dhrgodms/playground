@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/post")
-@CrossOrigin(origins = "http://ok-archive.com")
+@CrossOrigin(origins = "http://ok-archive.com:3000")
 @RequiredArgsConstructor
 public class PostController {
     private final PostDao postDao;
@@ -48,7 +48,9 @@ public class PostController {
 
     @PostMapping("/thumbnail-upload")
     public String upload(@RequestParam("file") MultipartFile file, HttpServletRequest request) throws IOException {
-        File path = new File(request.getServletContext().getRealPath("/") + "/static/");
+//        File path = new File(request.getServletContext().getRealPath("/") + "/static/");
+        File path = new File("http://ok-archive.com:8080/" + "/static/");
+
 //        path.mkdir();
         FileOutputStream fileOutputStream = new FileOutputStream(path + file.getOriginalFilename());
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);

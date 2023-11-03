@@ -16,6 +16,8 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("http://ok-archive.com:3000") // 리액트 앱의 도메인
+                .allowedOrigins("http://ok-archive.com:8080")
+                .allowedOrigins("http://ok-archive.com")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*")
                 .allowCredentials(true);
