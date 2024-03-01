@@ -1,4 +1,4 @@
-# 개인블로그 Ok's Archive
+# 🎨 개인블로그 Ok's Archive
 ![image](https://github.com/dhrgodms/playground/assets/53715875/db1d0a90-d0eb-4ca2-97f5-3fd9186cd3c8)
 
 - CRUD가 가능하도록 만든 블로그
